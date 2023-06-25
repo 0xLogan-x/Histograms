@@ -1,0 +1,37 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+data = pd.read_csv("name.csv")
+data_edited = data.dropna()
+#all of the missied data removed
+
+data_bins = [0,20,40,60,80,100]
+
+plt.figure("1990 Histogram FPR")
+hist = data_edited["1990"].hist(bins = data_bins, grid = False )
+hist.set_title("Histogram for the year 1990")
+hist.set_xlabel("female participation rate")
+hist.set_ylabel("frequency")
+
+
+plt.figure("2000 Histogram FPR")
+hist = data_edited["2000"].hist(bins = data_bins, grid = False )
+hist.set_title("Histogram for the year 2000")
+hist.set_xlabel("female participation rate")
+hist.set_ylabel("frequency")
+
+
+plt.figure("2010 Histogram FPR")
+hist = data_edited["2010"].hist(bins = data_bins, grid = False )
+hist.set_title("Histogram for the year 2010")
+hist.set_xlabel("female participation rate")
+hist.set_ylabel("frequency")
+
+
+plt.figure("2020 Histogram FPR")
+hist = data_edited["2020"].hist(bins = data_bins, grid = False )
+hist.set_title("Histogram for the year 2020")
+hist.set_xlabel("female participation rate")
+hist.set_ylabel("frequency")
+
+plt.show()
